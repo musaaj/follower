@@ -1,0 +1,1592 @@
+2023-05-07 20:42:46,646 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 25, in reply
+    file_id = update.message.effective_attachment[-1].file_id
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_telegramobject.py", line 240, in __getitem__
+    return getattr(self, item)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: attribute name must be string, not 'int'
+2023-05-07 21:02:16,951 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: All connection attempts failed
+2023-05-07 21:02:16,954 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 164, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1691, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/data/data/com.termux/files/usr/lib/python3.11/asyncio/base_events.py", line 1085, in create_connection
+    raise exceptions[0]
+  File "/data/data/com.termux/files/usr/lib/python3.11/asyncio/base_events.py", line 1069, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/asyncio/base_events.py", line 973, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/data/data/com.termux/files/usr/lib/python3.11/asyncio/selector_events.py", line 634, in sock_connect
+    return await fut
+           ^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/asyncio/selector_events.py", line 642, in _sock_connect
+    sock.connect(address)
+OSError: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 222, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: All connection attempts failed
+2023-05-07 21:22:16,944 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ReadError: 
+2023-05-07 21:22:16,949 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.11/asyncio/selector_events.py", line 995, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [Errno 103] Software caused connection abort
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 34, in read
+    return await self._stream.receive(max_bytes=max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/streams/tls.py", line 195, in receive
+    data = await self._call_sslobject_method(self._ssl_object.read, max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/streams/tls.py", line 137, in _call_sslobject_method
+    data = await self.transport_stream.receive()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1274, in receive
+    raise self._protocol.exception
+anyio.BrokenResourceError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 90, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/http11.py", line 112, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/http11.py", line 91, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/http11.py", line 155, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/http11.py", line 191, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 31, in read
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ReadError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ReadError: 
+2023-05-07 21:22:17,969 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:17,970 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/ipaddress.py", line 54, in ip_address
+    raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+ValueError: 'api.telegram.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 7] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:19,486 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:19,486 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/ipaddress.py", line 54, in ip_address
+    raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+ValueError: 'api.telegram.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 7] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:21,765 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:21,766 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/ipaddress.py", line 54, in ip_address
+    raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+ValueError: 'api.telegram.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 7] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:25,177 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:25,179 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/ipaddress.py", line 54, in ip_address
+    raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+ValueError: 'api.telegram.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 7] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:35,337 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:35,337 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/ipaddress.py", line 54, in ip_address
+    raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+ValueError: 'api.telegram.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 7] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:36,364 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:36,364 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/ipaddress.py", line 54, in ip_address
+    raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+ValueError: 'api.telegram.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 7] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:37,882 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:37,883 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/ipaddress.py", line 54, in ip_address
+    raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+ValueError: 'api.telegram.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 7] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:40,156 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:40,157 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/ipaddress.py", line 54, in ip_address
+    raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+ValueError: 'api.telegram.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 7] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:43,556 - telegram.ext._updater - ERROR - Error while getting Updates: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:22:43,556 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/ipaddress.py", line 54, in ip_address
+    raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+ValueError: 'api.telegram.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 7] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 216, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/data/data/com.termux/files/usr/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 7] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 607, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_updater.py", line 320, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 530, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 368, in decorator
+    result = await func(*args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 3623, in get_updates
+    await self._post(
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 456, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_extbot.py", line 312, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/_bot.py", line 487, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 165, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_baserequest.py", line 274, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/request/_httpxrequest.py", line 240, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 7] No address associated with hostname
+2023-05-07 21:44:59,015 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 26, in reply
+    await file.download_to_drive("file.png")
+          ^^^^
+NameError: name 'file' is not defined
+2023-05-07 21:47:19,446 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 26, in reply
+    await file.download_to_drive("file.png")
+          ^^^^
+NameError: name 'file' is not defined
+2023-05-07 21:49:02,433 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 26, in reply
+    await file.download_to_drive()
+          ^^^^
+NameError: name 'file' is not defined
+2023-05-07 21:58:32,284 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 25, in reply
+    file= await update.message.effective_attachment.get_file()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_file'
+2023-05-07 21:59:16,595 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 25, in reply
+    file= await update.message.effective_attachment.get_file()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_file'
+2023-05-07 22:14:35,556 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 25, in reply
+    file= await update.message.effective_attachment.get_file()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_file'
+2023-05-07 22:41:19,063 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 25, in reply
+    file= await update.message.effective_attachment.get_file()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_file'
+2023-05-07 22:44:00,897 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 25, in reply
+    file= await update.message.effective_attachment.get_file()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_file'
+2023-05-07 22:56:28,612 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 27, in reply
+    await file.download_to_drive(filename)
+                                 ^^^^^^^^
+NameError: name 'filename' is not defined
+2023-05-07 22:56:28,927 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 27, in reply
+    await file.download_to_drive(filename)
+                                 ^^^^^^^^
+NameError: name 'filename' is not defined
+2023-05-07 22:57:34,386 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 27, in reply
+    await file.download_to_drive(fil_ename)
+                                 ^^^^^^^^^
+NameError: name 'fil_ename' is not defined
+2023-05-07 22:57:34,577 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 27, in reply
+    await file.download_to_drive(fil_ename)
+                                 ^^^^^^^^^
+NameError: name 'fil_ename' is not defined
+2023-05-07 22:58:26,505 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 27, in reply
+    await file.download_to_drive(file_ename)
+                                 ^^^^^^^^^^
+NameError: name 'file_ename' is not defined
+2023-05-07 22:58:26,703 - telegram.ext._application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_application.py", line 1115, in process_update
+    await coroutine
+  File "/data/data/com.termux/files/home/follower/env/lib/python3.11/site-packages/telegram/ext/_handler.py", line 141, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/follower/bot.py", line 27, in reply
+    await file.download_to_drive(file_ename)
+                                 ^^^^^^^^^^
+NameError: name 'file_ename' is not defined
